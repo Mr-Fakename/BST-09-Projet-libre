@@ -1,3 +1,5 @@
+$.holdReady(true);
+
 const objetsMangas = [
     {id: 1, img: "./image/4c6ee25042b014561effb42bad9269a9.jpg", name: "Boruto", description : "Boruto est le fils aîné de Naruto et d' Hinata. Il est également le grand frère d' Himawari, qu'il adore. Il fait équipe avec Sarada et Mitsuki. Son professeur est Konohamaru." },
     {id: 2, img: "./image/1008181.jpg", name: "One pièce", description: "One Piece est un manga japonais écrit et illustré par Eiichiro Oda. Il est publié en feuilleton dans le magazine de manga shōnen de Shueisha Weekly Shōnen Jump depuis juillet 1997, avec ses chapitres individuels compilés en 99 volumes tankōbon en juin 2021." },
@@ -34,7 +36,7 @@ let button = document.querySelector(".button");
 
 
 
-button.addEventListener("click", () => { getValue() })
+// button.addEventListener("click", () => { getValue() })
 
 
 function getValue(){
@@ -64,3 +66,20 @@ function getValue(){
 }
 
 
+$.holdReady(false);
+$( document ).ready(function() {
+    let imagesDiv = objetsMangas.map(image => {
+        return `
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img class="card-img-top" alt="IMAGE ICI" src="${image.img}">
+                    <div class="card-body">
+                    <p class="card-text">Ceci est une description</p>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Voir l'article</button>
+                </div>
+            </div>
+        `
+    })
+    console.log( "ready!" );
+    $( "#imagesAlbum" ).append(imagesDiv);
+});
