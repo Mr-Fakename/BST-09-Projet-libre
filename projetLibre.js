@@ -25,3 +25,42 @@ const objetsMangas = [
     {id: 24, img: "./image/wallpapersden.com_one-piece-team-art_2560x1080.jpg", name: "One pièce", description: "One Piece est un manga japonais écrit et illustré par Eiichiro Oda. Il est publié en feuilleton dans le magazine de manga shōnen de Shueisha Weekly Shōnen Jump depuis juillet 1997, avec ses chapitres individuels compilés en 99 volumes tankōbon en juin 2021." },
     {id: 25, img: "./image/R.jpg", name: "Inconnu " },
 ]
+let nameManga = objetsMangas.name ;
+let img = objetsMangas.img ;
+let id = objetsMangas.id ;
+let description = objetsMangas.description ;
+
+let button = document.querySelector(".button");
+
+
+
+button.addEventListener("click", () => { getValue() })
+
+
+function getValue(){
+    let input = document.getElementById("input").value;
+    switch (input) {
+        case "boruto":
+        case "Boruto": console.log("1");
+            break;
+
+        case "One ":
+        case "one piece":
+        case "One pièce": console.log("2");
+            break;
+
+        case "Dbz": console.log("3");
+            break;
+
+        case "My hero accadémia": console.log("4");
+            break;
+
+        case "Bleach": console.log("4");
+            break;
+            
+        default: console.log("default");
+            break;
+    }
+}
+
+
