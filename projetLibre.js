@@ -89,4 +89,6 @@ function getValue(Regex){
 
 }
 
-//si j ecrit w ca affiche aucune image et ca affiche
+function hello world(){
+    console.log("hello");
+}
