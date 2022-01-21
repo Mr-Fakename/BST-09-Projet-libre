@@ -17,25 +17,24 @@
 
         <header>
             <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-                <a class="navbar-brand" href="#">Lorem Ipsum</a>
+                <a class="navbar-brand" href="#">Vitrine manga</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#">Accueil<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="#img">galerie<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Boutique</a>
+                            <a class="nav-link" href="#main">article</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link disabled" href="#">Contact</a>
+                            <!-- <a class="nav-link disabled" href="#">article</a> -->
                         </li>
                     </ul>
                     <form class="form-inline mt-2 mt-md-0">
-                        <input class="form-control mr-sm-2" type="text" placeholder="Chercher" aria-label="Recherche">
-                        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">C'est parti !</button>
+                        <input class="form-control mr-sm-2" id="input" type="search" placeholder="Chercher" aria-label="Recherche">
                     </form>
                 </div>
             </nav>
@@ -51,32 +50,33 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
+                        <img class="first-slide" src="./image/R (13).jpg" alt="First slide">
                         <div class="container">
                             <div class="carousel-caption text-left">
-                                <h1>Texte Important</h1>
-                                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                                <p><a class="btn btn-lg btn-primary" href="#" role="button">Voir la gallerie</a></p>
+                                <h1>Boruto</h1>
+                                <p>Boruto est le fils aîné de Naruto et d' Hinata. Il est également le grand frère d' Himawari, qu'il adore. Il fait équipe avec Sarada et Mitsuki. Son professeur est Konohamaru.</p>
+                                <p><a class="btn btn-lg btn-primary" href="#img" role="button">Voir la gallerie</a></p>
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
+                        <img class="second-slide" src="./image/wallpapersden.com_one-piece-team-art_2560x1080.jpg" alt="Second slide">
                         <div class="container">
                             <div class="carousel-caption">
-                                <h1>Autre Texte Important</h1>
-                                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                                <p><a class="btn btn-lg btn-primary" href="#" role="button">Voir la gallerie</a></p>
+                                <h1>One pièce</h1>
+                                <p>One Piece est un manga japonais écrit et illustré par Eiichiro Oda. Il est publié en feuilleton dans le magazine de manga shōnen de Shueisha Weekly Shōnen Jump depuis juillet 1997, avec ses chapitres individuels compilés en 99 volumes tankōbon en juin 2021.</p>
+                                <p><a class="btn btn-lg btn-primary" href="#img" role="button">Voir la gallerie</a></p>
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
+                        <!-- data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw== -->
+                        <img class="third-slide" src="./image/R (12).jpg" alt="Third slide">
                         <div class="container">
                             <div class="carousel-caption text-right">
-                                <h1>Encore Un Texte Important</h1>
-                                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                                <p><a class="btn btn-lg btn-primary" href="#" role="button">Voir la gallerie</a></p>
+                                <h1>Dbz</h1>
+                                <p>Dragon Ball Z, abréviation commune DBZ) est une série télévisée d'animation japonaise adaptée de la franchise d' Akira Toriyama et produite par la Toei Animation. Il s'agit de la suite de Dragon Ball.</p>
+                                <p><a class="btn btn-lg btn-primary" href="#img" role="button">Voir la gallerie</a></p>
                             </div>
                         </div>
                     </div>
@@ -91,17 +91,17 @@
                 </a>
             </div>
 
-            <div class="container marketing">
+            <div class="container marketing" id="main">
 
                 <hr class="featurette-divider">
 
                 <div class="row featurette">
                     <div class="col-md-7">
-                        <h2 class="featurette-heading">1er Article <span class="text-muted">Avec un texte mis en avant</span></h2>
-                        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+                        <h2 class="featurette-heading">Boruto <span class="text-muted"></span></h2>
+                        <p class="lead">Boruto est le fils aîné de Naruto et d' Hinata. Il est également le grand frère d' Himawari, qu'il adore. Il fait équipe avec Sarada et Mitsuki. Son professeur est Konohamaru.</p>
                     </div>
                     <div class="col-md-5">
-                        <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="IMAGE ICI">
+                        <img class="featurette-image img-fluid mx-auto" src="./image/4c6ee25042b014561effb42bad9269a9.jpg" data-src="holder.js/500x500/auto" alt="IMAGE ICI">
                     </div>
                 </div>
 
@@ -109,11 +109,11 @@
 
                 <div class="row featurette">
                     <div class="col-md-7 order-md-2">
-                        <h2 class="featurette-heading">2ème article<span class="text-muted"></span></h2>
-                        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+                        <h2 class="featurette-heading">Dbz<span class="text-muted"></span></h2>
+                        <p class="lead">Dragon Ball Z, abréviation commune DBZ) est une série télévisée d'animation japonaise adaptée de la franchise d' Akira Toriyama et produite par la Toei Animation. Il s'agit de la suite de Dragon Ball.</p>
                     </div>
                     <div class="col-md-5 order-md-1">
-                        <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="IMAGE ICI">
+                        <img class="featurette-image img-fluid mx-auto" src="./image/R (11).jpg" data-src="holder.js/500x500/auto" alt="IMAGE ICI">
                     </div>
                 </div>
 
@@ -121,18 +121,18 @@
 
                 <div class="row featurette">
                     <div class="col-md-7">
-                        <h2 class="featurette-heading">Et le dernier article <span class="text-muted"></span></h2>
-                        <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+                        <h2 class="featurette-heading">One pièce <span class="text-muted"></span></h2>
+                        <p class="lead">One Piece est un manga japonais écrit et illustré par Eiichiro Oda. Il est publié en feuilleton dans le magazine de manga shōnen de Shueisha Weekly Shōnen Jump depuis juillet 1997, avec ses chapitres individuels compilés en 99 volumes tankōbon en juin 2021.</p>
                     </div>
                     <div class="col-md-5">
-                        <img class="featurette-image img-fluid mx-auto" data-src="holder.js/500x500/auto" alt="IMAGE ICI">
+                        <img class="featurette-image img-fluid mx-auto" src="./image/1008181.jpg" data-src="holder.js/500x500/auto" alt="IMAGE ICI">
                     </div>
                 </div>
 
                 <hr class="featurette-divider">
             </div>
 
-            <div class="album py-5 bg-light">
+            <div class="album py-5 bg-light" id="img">
                 <div class="container">
                     <div class="row" id="imagesAlbum">
                     </div>
