@@ -27,44 +27,12 @@ const objetsMangas = [
     {id: 24, img: "./image/wallpapersden.com_one-piece-team-art_2560x1080.jpg", name: "One pièce", description: "One Piece est un manga japonais écrit et illustré par Eiichiro Oda. Il est publié en feuilleton dans le magazine de manga shōnen de Shueisha Weekly Shōnen Jump depuis juillet 1997, avec ses chapitres individuels compilés en 99 volumes tankōbon en juin 2021." },
     {id: 25, img: "./image/R.jpg", name: "Inconnu " },
 ]
-let nameManga = objetsMangas.name ;
-let img = objetsMangas.img ;
-let id = objetsMangas.id ;
-let description = objetsMangas.description ;
 
-let button = document.querySelector(".button");
-
-
-
-// button.addEventListener("click", () => { getValue() })
-
-
-function getValue(){
-    let input = document.getElementById("input").value;
-    switch (input) {
-        case "boruto":
-        case "Boruto": console.log("1");
-            break;
-
-        case "One ":
-        case "one piece":
-        case "One pièce": console.log("2");
-            break;
-
-        case "Dbz": console.log("3");
-            break;
-
-        case "My hero accadémia": console.log("4");
-            break;
-
-        case "Bleach": console.log("4");
-            break;
-            
-        default: console.log("default");
-            break;
-    }
-}
-
+let id ;
+let value ="" ;
+let input = document.getElementById("input");
+let main = document.querySelector('.marketing');
+let block;
 
 $.holdReady(false);
 $( document ).ready(function() {
@@ -72,14 +40,53 @@ $( document ).ready(function() {
         return `
             <div class="col-md-4">
                 <div class="card mb-4 shadow-sm">
-                    <img class="card-img-top" alt="IMAGE ICI" src="${image.img}">
+                    <img class="card-img-top" alt="${image.name}" src="${image.img}">
                     <div class="card-body">
-                    <p class="card-text">Ceci est une description</p>
-                    <button type="button" class="btn btn-sm btn-outline-secondary">Voir l'article</button>
+                    <p class="card-text">${
+                            image.description ? image.description : 'Pas de description à afficher'
+                        }</p>
+                    
                 </div>
             </div>
         `
     })
-    console.log( "ready!" );
     $( "#imagesAlbum" ).append(imagesDiv);
-});
+}); 
+
+//<button type="button" class="btn btn-sm btn-outline-secondary">Voir l'article</button> // si on veut le re mettre c est ligne 48
+
+
+input.addEventListener("input", (e) => {
+    value = e.target.value
+    let Regex = new RegExp(value,'i'); // 'i' = no casse (no care maj) 
+    let hide = getValue(Regex) //hide = bool
+    if(hide&&value!==""){  //si hide est true et  si value est vide 
+        main.style.display = "none" 
+    }else if(hide){
+        main.style.display = "block"
+    }else{
+        main.style.display = "block"
+    }
+})
+
+function getValue(Regex){
+    let bool = false; //bool sert a dire quand j ai ecrit un truc qui est dans la bdd
+    for (  manga of objetsMangas) {
+
+            let blockName =  document.querySelectorAll(".col-md-4 div img");
+            block = document.querySelectorAll(".col-md-4");
+
+            for (let i = 0; i < blockName.length; i++) { 
+                if ( !Regex.test(blockName[i].alt)) { //si la valeur de regex est pas contenue dans un des alt de img 
+                    block[i].style.display ="none";
+                }else{
+                    block[i].style.display ="block"; //la valeur de regex est contenue dans un des alt de img
+                    bool = true; 
+                }
+            }
+      }
+      return bool;
+
+}
+
+//si j ecrit w ca affiche aucune image et ca affiche
