@@ -1,8 +1,6 @@
 $.holdReady(true);
 
 const objetsMangas = [
-    {id: 1, img: "./image/4c6ee25042b014561effb42bad9269a9.jpg", name: "Boruto", description : "Boruto est le fils aîné de Naruto et d' Hinata. Il est également le grand frère d' Himawari, qu'il adore. Il fait équipe avec Sarada et Mitsuki. Son professeur est Konohamaru." },
-    {id: 2, img: "./image/1008181.jpg", name: "One pièce", description: "One Piece est un manga japonais écrit et illustré par Eiichiro Oda. Il est publié en feuilleton dans le magazine de manga shōnen de Shueisha Weekly Shōnen Jump depuis juillet 1997, avec ses chapitres individuels compilés en 99 volumes tankōbon en juin 2021." },
     {id: 3, img: "./image/1495292642.jpg", name: "inconnu" },
     {id: 4, img: "./image/R (1).jpg", name: "inconnu" },
     {id: 5, img: "./image/R (2).jpg", name: "inconnu" },
@@ -14,47 +12,19 @@ const objetsMangas = [
     {id: 11, img: "./image/R (8).jpg", name: "inconnu" },
     {id: 12, img: "./image/R (9).jpg", name: "inconnu" },
     {id: 13, img: "./image/R (10).jpg", name: "inconnu" },
-    {id: 14, img: "./image/R (11).jpg", name: "Dbz", description: "Dragon Ball Z, abréviation commune DBZ) est une série télévisée d'animation japonaise adaptée de la franchise d' Akira Toriyama et produite par la Toei Animation. Il s'agit de la suite de Dragon Ball." },
-    {id: 15, img: "./image/R (12).jpg", name: "Dbz", description: "Dragon Ball Z, abréviation commune DBZ) est une série télévisée d'animation japonaise adaptée de la franchise d' Akira Toriyama et produite par la Toei Animation. Il s'agit de la suite de Dragon Ball." },
-    {id: 16, img: "./image/R (13).jpg", name: "Boruto", description : "Boruto est le fils aîné de Naruto et d' Hinata. Il est également le grand frère d' Himawari, qu'il adore. Il fait équipe avec Sarada et Mitsuki. Son professeur est Konohamaru." },
     {id: 17, img: "./image/R (14).jpg", name: "My hero accadémia" },
     {id: 18, img: "./image/R (15).jpg", name: "My hero accadémia" },
     {id: 19, img: "./image/R (16).jpg", name: "My hero accadémia" },
     {id: 20, img: "./image/R (17).jpg", name: "Bleach" },
     {id: 21, img: "./image/R (18).jpg", name: "Bleach" },
     {id: 22, img: "./image/thumb-1920-1038723.jpg", name: "One " },
-    {id: 23, img: "./image/wallpapersden.com_one-piece-team-art_2560x1080.jpg", name: "One pièce", description: "One Piece est un manga japonais écrit et illustré par Eiichiro Oda. Il est publié en feuilleton dans le magazine de manga shōnen de Shueisha Weekly Shōnen Jump depuis juillet 1997, avec ses chapitres individuels compilés en 99 volumes tankōbon en juin 2021." },
-    {id: 24, img: "./image/wallpapersden.com_one-piece-team-art_2560x1080.jpg", name: "One pièce", description: "One Piece est un manga japonais écrit et illustré par Eiichiro Oda. Il est publié en feuilleton dans le magazine de manga shōnen de Shueisha Weekly Shōnen Jump depuis juillet 1997, avec ses chapitres individuels compilés en 99 volumes tankōbon en juin 2021." },
     {id: 25, img: "./image/R.jpg", name: "Inconnu " },
 ]
 
-let id ;
 let value ="" ;
 let input = document.getElementById("input");
 let main = document.querySelector('.marketing');
 let block;
-
-$.holdReady(false);
-$( document ).ready(function() {
-    let imagesDiv = objetsMangas.map(image => {
-        return `
-            <div class="col-md-4">
-                <div class="card mb-4 shadow-sm">
-                    <img class="card-img-top" alt="${image.name}" src="${image.img}">
-                    <div class="card-body">
-                    <p class="card-text">${
-                            image.description ? image.description : 'Pas de description à afficher'
-                        }</p>
-                    
-                </div>
-            </div>
-        `
-    })
-    $( "#imagesAlbum" ).append(imagesDiv);
-}); 
-
-//<button type="button" class="btn btn-sm btn-outline-secondary">Voir l'article</button> // si on veut le re mettre c est ligne 48
-
 
 input.addEventListener("input", (e) => {
     value = e.target.value
@@ -89,6 +59,69 @@ function getValue(Regex){
 
 }
 
-function hello world(){
-    console.log("hello");
+
+function subscriptionPopup(){
+    const popup = $('#popup');
+
+    popup.show();
+
+    $(".close").on('click',function(){
+        popup.hide();
+    });
 }
+
+$.holdReady(false);
+$(document).ready(function() {
+    let imagesDiv = objetsMangas.map(image => {
+        return `
+            <div class="col-md-4 article" style="margin: 2rem 0;">
+                <div class="card mb-4 shadow-sm h-100">
+                    <img class="card-img-top" alt="${image.name}" src="${image.img}" style="width: 100%; height: 15vw; object-fit: cover;">
+                    <div class="card-body">
+                    <p class="card-text">${
+            image.description ? image.description : 'Description en travaux !'
+        }</p>
+                    <button type="button" class="btn btn-sm btn-outline-secondary">Voir l'article</button>
+                </div>
+            </div>
+        `
+    })
+    $("#imagesAlbum").append(imagesDiv);
+
+    setTimeout( function() {
+        subscriptionPopup();
+    },10000);
+});
+
+$('.img-parallax').each(function(){
+    const img = $(this);
+    const imgParent = $(this).parent();
+
+    function parallaxImg () {
+        let speed = img.data('speed');
+        let imgY = imgParent.offset().top;
+        let winY = $(this).scrollTop();
+        let winH = $(this).height();
+        let parentH = imgParent.innerHeight();
+
+        let winBottom = winY + winH;
+
+        if (winBottom > imgY && winY < imgY + parentH) {
+            let imgBottom = ((winBottom - imgY) * speed);
+            let imgTop = winH + parentH;
+            let imgPercent = ((imgBottom / imgTop) * 100) + (50 - (speed * 50));
+            img.css({
+                top: imgPercent + '%',
+                transform: 'translate(-50%, -' + imgPercent + '%)'
+            })
+        }
+    }
+    $(document).on({
+        scroll: function () {
+            parallaxImg();
+        }, ready: function () {
+            parallaxImg();
+        }
+    });
+});
+

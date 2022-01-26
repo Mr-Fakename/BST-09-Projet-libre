@@ -17,20 +17,20 @@
 
         <header>
             <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-                <a class="navbar-brand" href="#">Vitrine manga</a>
+                <a class="navbar-brand" href="#">VitrineManga</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#img">galerie<span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="#img">Galerie<span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#main">article</a>
+                            <a class="nav-link" href="#main">Blog</a>
                         </li>
                         <li class="nav-item">
-                            <!-- <a class="nav-link disabled" href="#">article</a> -->
+                             <a class="nav-link disabled" href="#">Boutique</a>
                         </li>
                     </ul>
                     <form class="form-inline mt-2 mt-md-0">
@@ -63,18 +63,17 @@
                         <img class="second-slide" src="./image/wallpapersden.com_one-piece-team-art_2560x1080.jpg" alt="Second slide">
                         <div class="container">
                             <div class="carousel-caption">
-                                <h1>One pièce</h1>
+                                <h1>One Piece</h1>
                                 <p>One Piece est un manga japonais écrit et illustré par Eiichiro Oda. Il est publié en feuilleton dans le magazine de manga shōnen de Shueisha Weekly Shōnen Jump depuis juillet 1997, avec ses chapitres individuels compilés en 99 volumes tankōbon en juin 2021.</p>
                                 <p><a class="btn btn-lg btn-primary" href="#img" role="button">Voir la gallerie</a></p>
                             </div>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <!-- data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw== -->
                         <img class="third-slide" src="./image/R (12).jpg" alt="Third slide">
                         <div class="container">
                             <div class="carousel-caption text-right">
-                                <h1>Dbz</h1>
+                                <h1>DBZ</h1>
                                 <p>Dragon Ball Z, abréviation commune DBZ) est une série télévisée d'animation japonaise adaptée de la franchise d' Akira Toriyama et produite par la Toei Animation. Il s'agit de la suite de Dragon Ball.</p>
                                 <p><a class="btn btn-lg btn-primary" href="#img" role="button">Voir la gallerie</a></p>
                             </div>
@@ -95,12 +94,12 @@
 
                 <hr class="featurette-divider">
 
-                <div class="row featurette">
+                <div class="row featurette block">
                     <div class="col-md-7">
                         <h2 class="featurette-heading">Boruto <span class="text-muted"></span></h2>
                         <p class="lead">Boruto est le fils aîné de Naruto et d' Hinata. Il est également le grand frère d' Himawari, qu'il adore. Il fait équipe avec Sarada et Mitsuki. Son professeur est Konohamaru.</p>
                     </div>
-                    <div class="col-md-5">
+                    <div class="col-md-5 img-parallax" data-speed="2">
                         <img class="featurette-image img-fluid mx-auto" src="./image/4c6ee25042b014561effb42bad9269a9.jpg" data-src="holder.js/500x500/auto" alt="IMAGE ICI">
                     </div>
                 </div>
@@ -109,7 +108,7 @@
 
                 <div class="row featurette">
                     <div class="col-md-7 order-md-2">
-                        <h2 class="featurette-heading">Dbz<span class="text-muted"></span></h2>
+                        <h2 class="featurette-heading">DBZ<span class="text-muted"></span></h2>
                         <p class="lead">Dragon Ball Z, abréviation commune DBZ) est une série télévisée d'animation japonaise adaptée de la franchise d' Akira Toriyama et produite par la Toei Animation. Il s'agit de la suite de Dragon Ball.</p>
                     </div>
                     <div class="col-md-5 order-md-1">
@@ -121,7 +120,7 @@
 
                 <div class="row featurette">
                     <div class="col-md-7">
-                        <h2 class="featurette-heading">One pièce <span class="text-muted"></span></h2>
+                        <h2 class="featurette-heading">One Piece <span class="text-muted"></span></h2>
                         <p class="lead">One Piece est un manga japonais écrit et illustré par Eiichiro Oda. Il est publié en feuilleton dans le magazine de manga shōnen de Shueisha Weekly Shōnen Jump depuis juillet 1997, avec ses chapitres individuels compilés en 99 volumes tankōbon en juin 2021.</p>
                     </div>
                     <div class="col-md-5">
@@ -134,6 +133,7 @@
 
             <div class="album py-5 bg-light" id="img">
                 <div class="container">
+                    <h1>Blog</h1>
                     <div class="row" id="imagesAlbum">
                     </div>
                 </div>
@@ -144,6 +144,19 @@
                 <p>&copy; 2022 3WA &middot; <a href="#">Termes Legaux</a> &middot; <a href="#">Contact</a></p>
             </footer>
         </main>
+
+        <div id="popup" class="popup">
+            <div class="popup-content">
+                <div class="popup-head">
+                    <span class="close">×</span>
+                    <h2>Abonnez-vous à notre newsletter !</h2>
+                </div>
+                <div class="popup-main form-control">
+                    <input type="email" id="email" placeholder="Votre email"/>
+                    <button class="btn-dark" type="submit">VALIDER</button>
+                </div>
+            </div>
+        </div>
 
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
